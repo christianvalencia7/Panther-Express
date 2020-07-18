@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920DBEB84EC3F6F8CC5104B1 /* Pods_Panther_Express.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D66A25357AEE28A23F86F6E /* Pods_Panther_Express.framework */; };
 		94B0314A24C35DB400ACF8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0314924C35DB400ACF8ED /* AppDelegate.swift */; };
 		94B0314C24C35DB400ACF8ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */; };
 		94B0314E24C35DB400ACF8ED /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0314D24C35DB400ACF8ED /* FirstViewController.swift */; };
@@ -18,9 +19,11 @@
 		94B0316424C35F1900ACF8ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316324C35F1900ACF8ED /* User.swift */; };
 		94B0316624C3605300ACF8ED /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316524C3605300ACF8ED /* Order.swift */; };
 		94B0316824C367A800ACF8ED /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316724C367A800ACF8ED /* LogInViewController.swift */; };
+		94B0316A24C36F4A00ACF8ED /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B0316924C36F4A00ACF8ED /* GoogleService-Info-2.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E78AE98BCF32FCB270A36B8 /* Pods-Panther Express.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panther Express.release.xcconfig"; path = "Target Support Files/Pods-Panther Express/Pods-Panther Express.release.xcconfig"; sourceTree = "<group>"; };
 		94B0314624C35DB400ACF8ED /* Panther Express.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Panther Express.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B0314924C35DB400ACF8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		94B0316324C35F1900ACF8ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		94B0316524C3605300ACF8ED /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		94B0316724C367A800ACF8ED /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		94B0316924C36F4A00ACF8ED /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		9D66A25357AEE28A23F86F6E /* Pods_Panther_Express.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panther_Express.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6A509D705C2C54DDD29280F /* Pods-Panther Express.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panther Express.debug.xcconfig"; path = "Target Support Files/Pods-Panther Express/Pods-Panther Express.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920DBEB84EC3F6F8CC5104B1 /* Pods_Panther_Express.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		684D91B052B4F5F9B5C3FFA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D66A25357AEE28A23F86F6E /* Pods_Panther_Express.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76F947C3ABA40A3775593FBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6A509D705C2C54DDD29280F /* Pods-Panther Express.debug.xcconfig */,
+				2E78AE98BCF32FCB270A36B8 /* Pods-Panther Express.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		94B0313D24C35DB300ACF8ED = {
 			isa = PBXGroup;
 			children = (
 				94B0314824C35DB400ACF8ED /* Panther Express */,
 				94B0314724C35DB400ACF8ED /* Products */,
+				76F947C3ABA40A3775593FBE /* Pods */,
+				684D91B052B4F5F9B5C3FFA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +93,7 @@
 		94B0314824C35DB400ACF8ED /* Panther Express */ = {
 			isa = PBXGroup;
 			children = (
+				94B0316724C367A800ACF8ED /* LogInViewController.swift */,
 				94B0314924C35DB400ACF8ED /* AppDelegate.swift */,
 				94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */,
 				94B0314D24C35DB400ACF8ED /* FirstViewController.swift */,
@@ -76,7 +104,7 @@
 				94B0315F24C35E4900ACF8ED /* Models */,
 				94B0315624C35DB600ACF8ED /* LaunchScreen.storyboard */,
 				94B0315924C35DB600ACF8ED /* Info.plist */,
-				94B0316724C367A800ACF8ED /* LogInViewController.swift */,
+				94B0316924C36F4A00ACF8ED /* GoogleService-Info-2.plist */,
 			);
 			path = "Panther Express";
 			sourceTree = "<group>";
@@ -105,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94B0315C24C35DB600ACF8ED /* Build configuration list for PBXNativeTarget "Panther Express" */;
 			buildPhases = (
+				0DC0BB3A6716CA1F59C79F24 /* [CP] Check Pods Manifest.lock */,
 				94B0314224C35DB400ACF8ED /* Sources */,
 				94B0314324C35DB400ACF8ED /* Frameworks */,
 				94B0314424C35DB400ACF8ED /* Resources */,
+				A647AB1CD63F92EBCD1CC5C7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,11 +188,54 @@
 			files = (
 				94B0315824C35DB600ACF8ED /* LaunchScreen.storyboard in Resources */,
 				94B0315524C35DB600ACF8ED /* Assets.xcassets in Resources */,
+				94B0316A24C36F4A00ACF8ED /* GoogleService-Info-2.plist in Resources */,
 				94B0315324C35DB400ACF8ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DC0BB3A6716CA1F59C79F24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Panther Express-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A647AB1CD63F92EBCD1CC5C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Panther Express/Pods-Panther Express-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Panther Express/Pods-Panther Express-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Panther Express/Pods-Panther Express-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		94B0314224C35DB400ACF8ED /* Sources */ = {
@@ -318,6 +391,7 @@
 		};
 		94B0315D24C35DB600ACF8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6A509D705C2C54DDD29280F /* Pods-Panther Express.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -336,6 +410,7 @@
 		};
 		94B0315E24C35DB600ACF8ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E78AE98BCF32FCB270A36B8 /* Pods-Panther Express.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

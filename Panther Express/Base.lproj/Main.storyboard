@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="oWV-iJ-4wp">
             <objects>
-                <viewController id="hY6-QM-sJs" sceneMemberID="viewController">
+                <viewController id="hY6-QM-sJs" customClass="LogInViewController" customModule="Panther_Express" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lSx-7D-Bls">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
