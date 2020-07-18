@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,9 @@
 		94B0316424C35F1900ACF8ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316324C35F1900ACF8ED /* User.swift */; };
 		94B0316624C3605300ACF8ED /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316524C3605300ACF8ED /* Order.swift */; };
 		94B0316824C367A800ACF8ED /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316724C367A800ACF8ED /* LogInViewController.swift */; };
-		94B0316A24C36F4A00ACF8ED /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B0316924C36F4A00ACF8ED /* GoogleService-Info-2.plist */; };
+		94B0316A24C36F4A00ACF8ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B0316924C36F4A00ACF8ED /* GoogleService-Info.plist */; };
+		94B0316C24C38DCE00ACF8ED /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316B24C38DCE00ACF8ED /* NewOrderViewController.swift */; };
+		94B0316E24C38F5700ACF8ED /* SelectDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		94B0316324C35F1900ACF8ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		94B0316524C3605300ACF8ED /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		94B0316724C367A800ACF8ED /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		94B0316924C36F4A00ACF8ED /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		94B0316924C36F4A00ACF8ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94B0316B24C38DCE00ACF8ED /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
+		94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeliveryViewController.swift; sourceTree = "<group>"; };
 		9D66A25357AEE28A23F86F6E /* Pods_Panther_Express.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panther_Express.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A509D705C2C54DDD29280F /* Pods-Panther Express.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panther Express.debug.xcconfig"; path = "Target Support Files/Pods-Panther Express/Pods-Panther Express.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +72,6 @@
 				D6A509D705C2C54DDD29280F /* Pods-Panther Express.debug.xcconfig */,
 				2E78AE98BCF32FCB270A36B8 /* Pods-Panther Express.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -94,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				94B0316724C367A800ACF8ED /* LogInViewController.swift */,
+				94B0316B24C38DCE00ACF8ED /* NewOrderViewController.swift */,
+				94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */,
 				94B0314924C35DB400ACF8ED /* AppDelegate.swift */,
 				94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */,
 				94B0314D24C35DB400ACF8ED /* FirstViewController.swift */,
@@ -104,7 +109,7 @@
 				94B0315F24C35E4900ACF8ED /* Models */,
 				94B0315624C35DB600ACF8ED /* LaunchScreen.storyboard */,
 				94B0315924C35DB600ACF8ED /* Info.plist */,
-				94B0316924C36F4A00ACF8ED /* GoogleService-Info-2.plist */,
+				94B0316924C36F4A00ACF8ED /* GoogleService-Info.plist */,
 			);
 			path = "Panther Express";
 			sourceTree = "<group>";
@@ -188,7 +193,7 @@
 			files = (
 				94B0315824C35DB600ACF8ED /* LaunchScreen.storyboard in Resources */,
 				94B0315524C35DB600ACF8ED /* Assets.xcassets in Resources */,
-				94B0316A24C36F4A00ACF8ED /* GoogleService-Info-2.plist in Resources */,
+				94B0316A24C36F4A00ACF8ED /* GoogleService-Info.plist in Resources */,
 				94B0315324C35DB400ACF8ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,10 +249,12 @@
 			files = (
 				94B0315024C35DB400ACF8ED /* SecondViewController.swift in Sources */,
 				94B0316224C35EDB00ACF8ED /* FormTextField.swift in Sources */,
+				94B0316E24C38F5700ACF8ED /* SelectDeliveryViewController.swift in Sources */,
 				94B0316424C35F1900ACF8ED /* User.swift in Sources */,
 				94B0314E24C35DB400ACF8ED /* FirstViewController.swift in Sources */,
 				94B0316824C367A800ACF8ED /* LogInViewController.swift in Sources */,
 				94B0314A24C35DB400ACF8ED /* AppDelegate.swift in Sources */,
+				94B0316C24C38DCE00ACF8ED /* NewOrderViewController.swift in Sources */,
 				94B0314C24C35DB400ACF8ED /* SceneDelegate.swift in Sources */,
 				94B0316624C3605300ACF8ED /* Order.swift in Sources */,
 			);
