@@ -13,20 +13,27 @@ class OrdersTableViewController: UITableViewController {
     
     var orders = [Order]()
     var execute = false
+    var selectedRow = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        execute = Execute.execute
-        
-        if !execute {
-            loadRequestOrders()
-        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        execute = Execute.execute
+        
+        if !execute {
+            loadRequestOrders()
+        }
+        
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -71,6 +78,10 @@ class OrdersTableViewController: UITableViewController {
         }    
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "toOrderDetails", sender: nil)
+    }
 
     /*
     // Override to support rearranging the table view.
@@ -87,21 +98,29 @@ class OrdersTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let viewController = segue.destination as? OrderDetailsViewController {
+            viewController.execute = self.execute
+            viewController.order = orders[selectedRow]
+        }
     }
-    */
+
+    @IBAction func unwindSegueToOrders(_ sender: UIStoryboardSegue)
+    {
+            
+    }
 
     //MARK: - DATABASE MANAGMENT
     
     private func loadRequestOrders()  {
         let fireStoreDatabase = Firestore.firestore()
-        
+        orders.removeAll()
         fireStoreDatabase.collection("Orders").getDocuments { (snapshot, error) in
             if error != nil {
                 print(error?.localizedDescription ?? "ERROR")

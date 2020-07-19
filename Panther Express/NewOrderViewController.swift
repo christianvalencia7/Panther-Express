@@ -11,11 +11,14 @@ import UIKit
 class NewOrderViewController: UIViewController {
     
     var execute = false
+    @IBOutlet weak var newOrderButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         execute = Execute.execute
-
+        if execute{
+            newOrderButton.setTitle("Execute New Order", for: .normal)
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -36,6 +39,11 @@ class NewOrderViewController: UIViewController {
         if let viewController = segue.destination as? OrdersTableViewController {
             viewController.execute = self.execute
         }
+    }
+    
+    @IBAction func unwindSegueToNewOrder(_ sender: UIStoryboardSegue)
+    {
+            
     }
     
 

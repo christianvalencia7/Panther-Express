@@ -46,6 +46,7 @@ class AdditionalInfoViewController: UIViewController {
         order.requestedBy = Auth.auth().currentUser!.email!
         order.open = true
         uploadOrder(order: order)
+        performSegue(withIdentifier: "toNewOrder", sender: nil)
         
     }
     
