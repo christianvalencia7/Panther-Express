@@ -22,6 +22,8 @@
 		94B0316A24C36F4A00ACF8ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B0316924C36F4A00ACF8ED /* GoogleService-Info.plist */; };
 		94B0316C24C38DCE00ACF8ED /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316B24C38DCE00ACF8ED /* NewOrderViewController.swift */; };
 		94B0316E24C38F5700ACF8ED /* SelectDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */; };
+		94C3938A24C3D5CD0060DBF0 /* SelectPickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3938924C3D5CD0060DBF0 /* SelectPickUpViewController.swift */; };
+		94C3938C24C3E27D0060DBF0 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3938B24C3E27D0060DBF0 /* AdditionalInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		94B0316924C36F4A00ACF8ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94B0316B24C38DCE00ACF8ED /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeliveryViewController.swift; sourceTree = "<group>"; };
+		94C3938924C3D5CD0060DBF0 /* SelectPickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPickUpViewController.swift; sourceTree = "<group>"; };
+		94C3938B24C3E27D0060DBF0 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
 		9D66A25357AEE28A23F86F6E /* Pods_Panther_Express.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panther_Express.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A509D705C2C54DDD29280F /* Pods-Panther Express.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panther Express.debug.xcconfig"; path = "Target Support Files/Pods-Panther Express/Pods-Panther Express.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +103,9 @@
 				94B0316724C367A800ACF8ED /* LogInViewController.swift */,
 				94B0316B24C38DCE00ACF8ED /* NewOrderViewController.swift */,
 				94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */,
+				94C3938924C3D5CD0060DBF0 /* SelectPickUpViewController.swift */,
 				94B0314924C35DB400ACF8ED /* AppDelegate.swift */,
+				94C3938B24C3E27D0060DBF0 /* AdditionalInfoViewController.swift */,
 				94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */,
 				94B0314D24C35DB400ACF8ED /* FirstViewController.swift */,
 				94B0314F24C35DB400ACF8ED /* SecondViewController.swift */,
@@ -252,8 +258,10 @@
 				94B0316E24C38F5700ACF8ED /* SelectDeliveryViewController.swift in Sources */,
 				94B0316424C35F1900ACF8ED /* User.swift in Sources */,
 				94B0314E24C35DB400ACF8ED /* FirstViewController.swift in Sources */,
+				94C3938C24C3E27D0060DBF0 /* AdditionalInfoViewController.swift in Sources */,
 				94B0316824C367A800ACF8ED /* LogInViewController.swift in Sources */,
 				94B0314A24C35DB400ACF8ED /* AppDelegate.swift in Sources */,
+				94C3938A24C3D5CD0060DBF0 /* SelectPickUpViewController.swift in Sources */,
 				94B0316C24C38DCE00ACF8ED /* NewOrderViewController.swift in Sources */,
 				94B0314C24C35DB400ACF8ED /* SceneDelegate.swift in Sources */,
 				94B0316624C3605300ACF8ED /* Order.swift in Sources */,

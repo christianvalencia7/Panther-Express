@@ -9,15 +9,25 @@
 import Foundation
 
 class Order: Codable {
-    var requestedBy = User()
-    var excecutedBy = User()
-    var date = Date()
+    var id = UUID()
+    
+    var requestedBy = ""
+    var excecutedBy = ""
+   
     var excecuterRating = -1
     var requestRating = -1
     var open = false
     var inProgress = false
     var completead = false
     
-    var pickupLocation = ""
-    var deliveryLocation = ""
+    var deliveryLogitud = Double()
+    var deliveryLatitud = Double()
+    
+    var pickUpLogitud = Double()
+    var pickUpLatitud = Double()
+    
+    var storeName = ""
+    var pickUpName = ""
+    var date = ""
+    var comments = ""
 }

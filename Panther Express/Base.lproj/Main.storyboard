@@ -24,10 +24,15 @@
                         <viewLayoutGuide key="safeArea" id="02l-40-9HE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select delivey location" id="0Zf-p7-GIo">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="84J-6l-UeC"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="84J-6l-UeC">
+                            <connections>
+                                <action selector="nextPressed:" destination="hfO-BP-qBc" id="QpB-Y8-zOP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="map" destination="idM-mv-s5T" id="hNI-Pk-qPe"/>
+                        <segue destination="3JF-Py-EoF" kind="show" identifier="toSelectPickUp" id="Uf8-Zo-tmi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oN-9b-RFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -127,6 +132,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WP4-MX-dLr" customClass="FormTextField" customModule="Panther_Express" customModuleProvider="target">
                                 <rect key="frame" x="20" y="328" width="374" height="55"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ztK-5J-H3U"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -142,6 +150,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tCT-ak-wOU" customClass="FormTextField" customModule="Panther_Express" customModuleProvider="target">
                                 <rect key="frame" x="20" y="423" width="374" height="54"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="EWN-VU-dmK"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -157,6 +168,9 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-HA-beX">
                                 <rect key="frame" x="20" y="523" width="374" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="inL-Ms-uGm"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Request Delivery"/>
                                     <segment title="Execute Delivery"/>
@@ -166,7 +180,7 @@
                                     <action selector="requestOrExecute:" destination="hY6-QM-sJs" eventType="valueChanged" id="ZzU-D7-nfB"/>
                                 </connections>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Qr-uN-h2D">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Panther Express Logo" translatesAutoresizingMaskIntoConstraints="NO" id="0Qr-uN-h2D">
                                 <rect key="frame" x="76" y="99" width="262" height="168"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vh-Ie-cTS">
@@ -248,8 +262,152 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
+        <!--Select pick up location-->
+        <scene sceneID="3NZ-xG-shi">
+            <objects>
+                <viewController id="3JF-Py-EoF" customClass="SelectPickUpViewController" customModule="Panther_Express" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aez-TG-dlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-zG-r9E">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="KDo-3i-vJ5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select pick up location" id="90M-Ol-jv0">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="YG9-oP-6ql">
+                            <connections>
+                                <action selector="nextPressed:" destination="3JF-Py-EoF" id="k0c-Za-RWJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="gOo-zG-r9E" id="wR9-JH-fK6"/>
+                        <segue destination="Zk9-Ik-73V" kind="show" identifier="toAdditionalInfo" id="xvy-Vu-D17"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yal-sB-gkT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3941" y="-883"/>
+        </scene>
+        <!--Additional Information-->
+        <scene sceneID="4g6-42-Jtj">
+            <objects>
+                <viewController id="Zk9-Ik-73V" customClass="AdditionalInfoViewController" customModule="Panther_Express" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SLp-CN-1ud">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Store name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wkd-k3-yXz" customClass="FormTextField" customModule="Panther_Express" customModuleProvider="target">
+                                <rect key="frame" x="20" y="158" width="374" height="45.5"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick up name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oc1-nK-Bri" customClass="FormTextField" customModule="Panther_Express" customModuleProvider="target">
+                                <rect key="frame" x="20" y="245" width="374" height="45.5"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DLU-hR-JoD" customClass="FormTextField" customModule="Panther_Express" customModuleProvider="target">
+                                <rect key="frame" x="135" y="328" width="259" height="46"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG1-dt-x65">
+                                <rect key="frame" x="20" y="328" width="117" height="46"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Additional Comments" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="La4-Be-Xm4" customClass="FormTextField" customModule="Panther_Express" customModuleProvider="target">
+                                <rect key="frame" x="20" y="415" width="374" height="46"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="La4-Be-Xm4" firstAttribute="width" secondItem="Wkd-k3-yXz" secondAttribute="width" id="0gH-N0-wRb"/>
+                            <constraint firstItem="UQ9-AX-Dcd" firstAttribute="trailing" secondItem="aG1-dt-x65" secondAttribute="trailing" constant="277" id="2yr-aA-Gwa"/>
+                            <constraint firstItem="DLU-hR-JoD" firstAttribute="top" secondItem="oc1-nK-Bri" secondAttribute="bottom" constant="37.5" id="8tL-gR-bht"/>
+                            <constraint firstItem="oc1-nK-Bri" firstAttribute="top" secondItem="Wkd-k3-yXz" secondAttribute="bottom" constant="41.5" id="8za-Nw-ecM"/>
+                            <constraint firstItem="Wkd-k3-yXz" firstAttribute="leading" secondItem="oc1-nK-Bri" secondAttribute="leading" id="GNL-Tc-Vwx"/>
+                            <constraint firstItem="oc1-nK-Bri" firstAttribute="trailing" secondItem="DLU-hR-JoD" secondAttribute="trailing" id="GfL-qs-bCr"/>
+                            <constraint firstItem="DLU-hR-JoD" firstAttribute="leading" secondItem="UQ9-AX-Dcd" secondAttribute="leading" constant="135" id="LDI-Gm-h1j"/>
+                            <constraint firstItem="Wkd-k3-yXz" firstAttribute="top" secondItem="UQ9-AX-Dcd" secondAttribute="top" constant="70" id="P4h-oU-ISQ"/>
+                            <constraint firstItem="aG1-dt-x65" firstAttribute="top" secondItem="DLU-hR-JoD" secondAttribute="top" id="SCR-Sr-x2Q"/>
+                            <constraint firstItem="oc1-nK-Bri" firstAttribute="leading" secondItem="aG1-dt-x65" secondAttribute="leading" id="UBV-WJ-VGK"/>
+                            <constraint firstItem="aG1-dt-x65" firstAttribute="bottom" secondItem="DLU-hR-JoD" secondAttribute="bottom" id="Xx3-Za-nT7"/>
+                            <constraint firstItem="Wkd-k3-yXz" firstAttribute="trailing" secondItem="SLp-CN-1ud" secondAttribute="trailingMargin" id="cyU-iX-uu7"/>
+                            <constraint firstItem="oc1-nK-Bri" firstAttribute="width" secondItem="Wkd-k3-yXz" secondAttribute="width" id="nrW-sA-HvO"/>
+                            <constraint firstItem="La4-Be-Xm4" firstAttribute="top" secondItem="DLU-hR-JoD" secondAttribute="bottom" constant="41" id="qDv-4P-sTD"/>
+                            <constraint firstItem="La4-Be-Xm4" firstAttribute="leading" secondItem="aG1-dt-x65" secondAttribute="leading" id="soP-Wq-K4q"/>
+                            <constraint firstItem="Wkd-k3-yXz" firstAttribute="leading" secondItem="SLp-CN-1ud" secondAttribute="leadingMargin" id="yhB-5G-JUL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UQ9-AX-Dcd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Additional Information" id="BYc-ee-zxx">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="YPC-BR-IiH">
+                            <connections>
+                                <action selector="doneClicked:" destination="Zk9-Ik-73V" id="lZC-gN-npR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addComments" destination="La4-Be-Xm4" id="Zuw-jF-VXc"/>
+                        <outlet property="datePick" destination="DLU-hR-JoD" id="na6-8o-hyK"/>
+                        <outlet property="pickUpName" destination="oc1-nK-Bri" id="Uzl-DO-001"/>
+                        <outlet property="storeName" destination="Wkd-k3-yXz" id="p1O-T2-I5q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D89-1J-Rum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5011.594202898551" y="-883.25892857142856"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Panther Express Logo" width="200" height="200"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="98"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
     </resources>

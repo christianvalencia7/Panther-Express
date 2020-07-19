@@ -1,5 +1,5 @@
 //
-//  SelectDeliveryViewController.swift
+//  SelectPickUpViewController.swift
 //  Panther Express
 //
 //  Created by Christian Valencia on 7/18/20.
@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class SelectDeliveryViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class SelectPickUpViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
     var locationManager = CLLocationManager()
@@ -54,7 +54,7 @@ class SelectDeliveryViewController: UIViewController, MKMapViewDelegate, CLLocat
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = touchedCoordinates
-            annotation.title = "Delivery Location"
+            annotation.title = "Pick up Location"
             self.map.addAnnotation(annotation)
             
             
@@ -62,9 +62,9 @@ class SelectDeliveryViewController: UIViewController, MKMapViewDelegate, CLLocat
         
     }
     @IBAction func nextPressed(_ sender: Any) {
-        order.deliveryLogitud = self.chosenLongitude
-        order.deliveryLatitud = self.chosenLatitude
-        performSegue(withIdentifier: "toSelectPickUp", sender: nil)
+        order.pickUpLogitud = self.chosenLongitude
+        order.pickUpLatitud = self.chosenLatitude
+        performSegue(withIdentifier: "toAdditionalInfo", sender: nil)
     }
     
     
@@ -74,10 +74,11 @@ class SelectDeliveryViewController: UIViewController, MKMapViewDelegate, CLLocat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if let viewController = segue.destination as? SelectPickUpViewController {
+        if let viewController = segue.destination as? AdditionalInfoViewController {
             viewController.order = self.order
         }
     }
     
 
 }
+

@@ -45,6 +45,8 @@
 	<string>Main</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>To get the location of the person executing the order and the person requesting the order</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To get the location of the person executing the order and the person requesting the order</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
