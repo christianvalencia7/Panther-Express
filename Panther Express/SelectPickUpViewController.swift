@@ -26,6 +26,11 @@ class SelectPickUpViewController: UIViewController, MKMapViewDelegate, CLLocatio
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
+        let location = CLLocationCoordinate2D(latitude: 25.952742, longitude: -80.250549)
+        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        let region = MKCoordinateRegion(center: location, span: span)
+        map.setRegion(region, animated: true)
+        
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(chooseLocation(gestureRecognizer:)))
         gestureRecognizer.minimumPressDuration = 2
         map.addGestureRecognizer(gestureRecognizer)
