@@ -30,8 +30,8 @@ class LogInViewController: UIViewController {
                 if error != nil {
                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
                 } else {
-                    self.performSegue(withIdentifier: "toApp", sender: nil)
-                    
+                    self.makeAlert(titleInput: "Sign up compleated", messageInput: "Welcome to Panther Express")
+                    self.passwordText.text = ""
                 }
             }
         

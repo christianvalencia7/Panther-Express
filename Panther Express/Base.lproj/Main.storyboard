@@ -62,10 +62,25 @@
                                     <action selector="newOrder:" destination="9pv-A4-QxB" eventType="touchUpInside" id="BJr-w2-xAb"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-s0-BkS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="9xx-fP-7za">
+                                        <barButtonItem key="leftBarButtonItem" title="Log out" id="AMU-FF-2nZ">
+                                            <connections>
+                                                <action selector="logOut:" destination="9pv-A4-QxB" id="OLi-GQ-NfM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="WfA-s0-BkS" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="6ye-X2-Hf6"/>
+                            <constraint firstItem="WfA-s0-BkS" firstAttribute="centerX" secondItem="YXX-l8-7tU" secondAttribute="centerX" id="Hk1-3V-17G"/>
                             <constraint firstItem="YXX-l8-7tU" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="KnI-XW-eHO"/>
+                            <constraint firstItem="WfA-s0-BkS" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="ZnO-nF-G7s"/>
                             <constraint firstItem="YXX-l8-7tU" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="iVp-K2-aqn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -75,16 +90,18 @@
                         <outlet property="newOrderButton" destination="YXX-l8-7tU" id="X4z-Gt-Qfi"/>
                         <segue destination="hfO-BP-qBc" kind="show" identifier="toSelectDelivery" id="lLq-21-0me"/>
                         <segue destination="5BK-ew-MbV" kind="show" identifier="toOrdersNear" id="Nc6-zK-Nlq"/>
+                        <segue destination="u05-FX-6vN" kind="unwind" identifier="toLogIn" unwindAction="unwindSeguetoLogIn:" id="p5f-AO-mAV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <exit id="u05-FX-6vN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1807" y="-320"/>
         </scene>
         <!--Open Orders Near You-->
         <scene sceneID="WsY-t7-qrc">
             <objects>
-                <tableViewController id="5BK-ew-MbV" sceneMemberID="viewController">
+                <tableViewController id="5BK-ew-MbV" customClass="OpenOrdersTableViewController" customModule="Panther_Express" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o04-dS-aWa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +140,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Open Orders Near You" id="JbE-NW-E2r"/>
+                    <connections>
+                        <segue destination="aeY-wu-kRL" kind="show" identifier="toOrderDetails" id="7EC-GJ-ipM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkj-lv-ICt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -353,13 +373,16 @@
                         <outlet property="store" destination="PoZ-Q1-fOm" id="j95-3U-rri"/>
                         <outlet property="upperButton" destination="KbW-1X-569" id="VJQ-Ai-uyQ"/>
                         <segue destination="Lv9-XN-mwn" kind="show" identifier="toLocations" id="A83-K6-upH"/>
+                        <segue destination="BlO-7R-NZe" kind="unwind" identifier="toNewOrder" unwindAction="unwindSegueToNewOrder:" id="BhZ-0S-opg"/>
+                        <segue destination="BlO-7R-NZe" kind="unwind" identifier="toOrders" unwindAction="unwindSegueToOrders:" id="SdK-Zy-aeD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wv0-DG-KpZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BlO-7R-NZe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2050.7246376811595" y="1035.9375"/>
         </scene>
-        <!--Locations View Controller-->
+        <!--Locations-->
         <scene sceneID="q6w-Ux-dwN">
             <objects>
                 <viewController id="Lv9-XN-mwn" customClass="LocationsViewController" customModule="Panther_Express" customModuleProvider="target" sceneMemberID="viewController">
@@ -380,7 +403,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wpC-Ry-89w"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3ec-u4-pvu"/>
+                    <navigationItem key="navigationItem" title="Locations" id="3ec-u4-pvu"/>
                     <connections>
                         <outlet property="map" destination="Ehp-mv-dGo" id="CvY-vG-cUE"/>
                     </connections>
@@ -714,6 +737,9 @@
             <point key="canvasLocation" x="-11.594202898550726" y="1031.9196428571429"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7EC-GJ-ipM"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Panther Express Logo" width="200" height="200"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="98"/>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		920DBEB84EC3F6F8CC5104B1 /* Pods_Panther_Express.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D66A25357AEE28A23F86F6E /* Pods_Panther_Express.framework */; };
 		946969CD24C4A8E100CB0FB2 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946969CC24C4A8E100CB0FB2 /* LocationsViewController.swift */; };
+		946969CF24C4B45700CB0FB2 /* OpenOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946969CE24C4B45700CB0FB2 /* OpenOrdersTableViewController.swift */; };
 		94B0314A24C35DB400ACF8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0314924C35DB400ACF8ED /* AppDelegate.swift */; };
 		94B0314C24C35DB400ACF8ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */; };
 		94B0314E24C35DB400ACF8ED /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0314D24C35DB400ACF8ED /* FirstViewController.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		2E78AE98BCF32FCB270A36B8 /* Pods-Panther Express.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panther Express.release.xcconfig"; path = "Target Support Files/Pods-Panther Express/Pods-Panther Express.release.xcconfig"; sourceTree = "<group>"; };
 		946969CC24C4A8E100CB0FB2 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		946969CE24C4B45700CB0FB2 /* OpenOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrdersTableViewController.swift; sourceTree = "<group>"; };
 		94B0314624C35DB400ACF8ED /* Panther Express.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Panther Express.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B0314924C35DB400ACF8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				94C3938924C3D5CD0060DBF0 /* SelectPickUpViewController.swift */,
 				94B03D2424C4952F00483870 /* OrderDetailsViewController.swift */,
 				946969CC24C4A8E100CB0FB2 /* LocationsViewController.swift */,
+				946969CE24C4B45700CB0FB2 /* OpenOrdersTableViewController.swift */,
 				94B0314924C35DB400ACF8ED /* AppDelegate.swift */,
 				94C3938B24C3E27D0060DBF0 /* AdditionalInfoViewController.swift */,
 				94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */,
@@ -282,6 +285,7 @@
 				94C3938E24C416E20060DBF0 /* OrdersTableViewController.swift in Sources */,
 				94B0314A24C35DB400ACF8ED /* AppDelegate.swift in Sources */,
 				94C3938A24C3D5CD0060DBF0 /* SelectPickUpViewController.swift in Sources */,
+				946969CF24C4B45700CB0FB2 /* OpenOrdersTableViewController.swift in Sources */,
 				946969CD24C4A8E100CB0FB2 /* LocationsViewController.swift in Sources */,
 				94C3939624C428D40060DBF0 /* Execute.swift in Sources */,
 				94C3939024C418750060DBF0 /* CustomTableViewCell.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewOrderViewController: UIViewController {
     
@@ -26,9 +27,21 @@ class NewOrderViewController: UIViewController {
         if !execute {
             performSegue(withIdentifier: "toSelectDelivery", sender: nil)
         }
+        else {
+            performSegue(withIdentifier: "toOrdersNear", sender: nil)
+        }
     }
     
-
+    @IBAction func logOut(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "toLogIn", sender: nil)
+            
+        } catch {
+            print("error")
+        }
+    }
+    
     
     // MARK: - Navigation
 

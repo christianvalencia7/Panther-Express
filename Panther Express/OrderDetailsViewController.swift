@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class OrderDetailsViewController: UIViewController {
 
     var order = Order()
     var execute = false
+    var candidate = false
     
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var requestedBy: UILabel!
@@ -25,9 +27,14 @@ class OrderDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !execute {
+        if !execute && !candidate {
             upperButton.isEnabled = false
+            upperButton.title = ""
         }
+        else if candidate{
+            upperButton.title = "Execute Order"
+        }
+        
         
         if order.open {
             status.text = "Open"
@@ -49,6 +56,20 @@ class OrderDetailsViewController: UIViewController {
     }
     
     @IBAction func markClicked(_ sender: UIBarButtonItem) {
+        if candidate {
+            order.excecutedBy = Auth.auth().currentUser!.email!
+            order.open = false
+            order.inProgress = true
+            uploadOrder(order: order)
+            performSegue(withIdentifier: "toNewOrder", sender: nil)
+        }
+        
+        else if execute {
+            order.inProgress = false
+            order.completead = true
+            uploadOrder(order: order)
+            performSegue(withIdentifier: "toOrders", sender: nil)
+        }
     }
     
     
@@ -67,4 +88,19 @@ class OrderDetailsViewController: UIViewController {
     }
     
 
+    //MARK: - ONLINE DATABASE MANAGMENT
+    private func uploadOrder(order: Order) {
+        let firestoreDatabase = Firestore.firestore()
+        do {
+            let jsonData = try JSONEncoder().encode(order)
+            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            let firestoreOrder = [order.pickUpName : jsonObject] as [String : Any]
+            firestoreDatabase.collection("Orders").document(order.id.uuidString).setData(firestoreOrder)
+
+        }
+        catch {
+            print("ERROR!!! \(error.localizedDescription)")
+        }
+    }
+    
 }

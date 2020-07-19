@@ -1,5 +1,5 @@
 //
-//  OrdersTableViewController.swift
+//  OpenOrdersTableViewController.swift
 //  Panther Express
 //
 //  Created by Christian Valencia on 7/19/20.
@@ -9,10 +9,9 @@
 import UIKit
 import Firebase
 
-class OrdersTableViewController: UITableViewController {
+class OpenOrdersTableViewController: UITableViewController {
     
     var orders = [Order]()
-    var execute = false
     var selectedRow = -1
     
     override func viewDidLoad() {
@@ -27,14 +26,7 @@ class OrdersTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        execute = Execute.execute
-        
-        if !execute {
-            loadRequestOrders()
-        }
-        else{
-            loadExecuteOrders()
-        }
+        loadExecuteOrders()
         
         tableView.reloadData()
     }
@@ -78,7 +70,7 @@ class OrdersTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -109,8 +101,8 @@ class OrdersTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let viewController = segue.destination as? OrderDetailsViewController {
-            viewController.execute = self.execute
             viewController.order = orders[selectedRow]
+            viewController.candidate = true
         }
     }
 
@@ -120,39 +112,6 @@ class OrdersTableViewController: UITableViewController {
     }
 
     //MARK: - DATABASE MANAGMENT
-    
-    private func loadRequestOrders()  {
-        let fireStoreDatabase = Firestore.firestore()
-        orders.removeAll()
-        fireStoreDatabase.collection("Orders").getDocuments { (snapshot, error) in
-            if error != nil {
-                print(error?.localizedDescription ?? "ERROR")
-            } else {
-                if snapshot?.isEmpty != true && snapshot != nil {
-                    for document in snapshot!.documents {
-                        let data = document.data()
-                        for (_, j) in data {
-                            do{
-                                let data = try? JSONSerialization.data(withJSONObject: j as Any, options: [])
-                                let order = try JSONDecoder().decode(Order.self, from: data!)
-                                if order.requestedBy.elementsEqual(Auth.auth().currentUser!.email!){
-                                    self.orders.append(order)
-                                }
-                                
-                            }
-                            catch {
-                                print(error.localizedDescription)
-                            }
-
-                        }
-                        self.tableView.reloadData()
-                    }
-                }
-                
-            }
-            
-        }
-    }
     
     private func loadExecuteOrders()  {
         let fireStoreDatabase = Firestore.firestore()
@@ -168,7 +127,7 @@ class OrdersTableViewController: UITableViewController {
                             do{
                                 let data = try? JSONSerialization.data(withJSONObject: j as Any, options: [])
                                 let order = try JSONDecoder().decode(Order.self, from: data!)
-                                if order.excecutedBy.elementsEqual(Auth.auth().currentUser!.email!){
+                                if order.open{
                                     self.orders.append(order)
                                 }
                                 
