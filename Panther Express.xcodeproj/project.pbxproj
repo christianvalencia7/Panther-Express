@@ -24,6 +24,10 @@
 		94B0316E24C38F5700ACF8ED /* SelectDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */; };
 		94C3938A24C3D5CD0060DBF0 /* SelectPickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3938924C3D5CD0060DBF0 /* SelectPickUpViewController.swift */; };
 		94C3938C24C3E27D0060DBF0 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3938B24C3E27D0060DBF0 /* AdditionalInfoViewController.swift */; };
+		94C3938E24C416E20060DBF0 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3938D24C416E10060DBF0 /* OrdersTableViewController.swift */; };
+		94C3939024C418750060DBF0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3938F24C418750060DBF0 /* CustomTableViewCell.swift */; };
+		94C3939424C426160060DBF0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3939324C426160060DBF0 /* TabBarViewController.swift */; };
+		94C3939624C428D40060DBF0 /* Execute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3939524C428D40060DBF0 /* Execute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeliveryViewController.swift; sourceTree = "<group>"; };
 		94C3938924C3D5CD0060DBF0 /* SelectPickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPickUpViewController.swift; sourceTree = "<group>"; };
 		94C3938B24C3E27D0060DBF0 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
+		94C3938D24C416E10060DBF0 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		94C3938F24C418750060DBF0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		94C3939324C426160060DBF0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		94C3939524C428D40060DBF0 /* Execute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Execute.swift; sourceTree = "<group>"; };
 		9D66A25357AEE28A23F86F6E /* Pods_Panther_Express.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panther_Express.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A509D705C2C54DDD29280F /* Pods-Panther Express.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panther Express.debug.xcconfig"; path = "Target Support Files/Pods-Panther Express/Pods-Panther Express.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				94B0316724C367A800ACF8ED /* LogInViewController.swift */,
+				94C3938D24C416E10060DBF0 /* OrdersTableViewController.swift */,
 				94B0316B24C38DCE00ACF8ED /* NewOrderViewController.swift */,
 				94B0316D24C38F5700ACF8ED /* SelectDeliveryViewController.swift */,
 				94C3938924C3D5CD0060DBF0 /* SelectPickUpViewController.swift */,
@@ -108,6 +117,8 @@
 				94C3938B24C3E27D0060DBF0 /* AdditionalInfoViewController.swift */,
 				94B0314B24C35DB400ACF8ED /* SceneDelegate.swift */,
 				94B0314D24C35DB400ACF8ED /* FirstViewController.swift */,
+				94C3939524C428D40060DBF0 /* Execute.swift */,
+				94C3939324C426160060DBF0 /* TabBarViewController.swift */,
 				94B0314F24C35DB400ACF8ED /* SecondViewController.swift */,
 				94B0315124C35DB400ACF8ED /* Main.storyboard */,
 				94B0315424C35DB600ACF8ED /* Assets.xcassets */,
@@ -133,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				94B0316124C35EDB00ACF8ED /* FormTextField.swift */,
+				94C3938F24C418750060DBF0 /* CustomTableViewCell.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -253,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94C3939424C426160060DBF0 /* TabBarViewController.swift in Sources */,
 				94B0315024C35DB400ACF8ED /* SecondViewController.swift in Sources */,
 				94B0316224C35EDB00ACF8ED /* FormTextField.swift in Sources */,
 				94B0316E24C38F5700ACF8ED /* SelectDeliveryViewController.swift in Sources */,
@@ -260,8 +273,11 @@
 				94B0314E24C35DB400ACF8ED /* FirstViewController.swift in Sources */,
 				94C3938C24C3E27D0060DBF0 /* AdditionalInfoViewController.swift in Sources */,
 				94B0316824C367A800ACF8ED /* LogInViewController.swift in Sources */,
+				94C3938E24C416E20060DBF0 /* OrdersTableViewController.swift in Sources */,
 				94B0314A24C35DB400ACF8ED /* AppDelegate.swift in Sources */,
 				94C3938A24C3D5CD0060DBF0 /* SelectPickUpViewController.swift in Sources */,
+				94C3939624C428D40060DBF0 /* Execute.swift in Sources */,
+				94C3939024C418750060DBF0 /* CustomTableViewCell.swift in Sources */,
 				94B0316C24C38DCE00ACF8ED /* NewOrderViewController.swift in Sources */,
 				94B0314C24C35DB400ACF8ED /* SceneDelegate.swift in Sources */,
 				94B0316624C3605300ACF8ED /* Order.swift in Sources */,

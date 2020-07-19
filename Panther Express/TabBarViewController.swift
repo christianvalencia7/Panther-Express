@@ -1,28 +1,20 @@
 //
-//  NewOrderViewController.swift
+//  TabBarViewController.swift
 //  Panther Express
 //
-//  Created by Christian Valencia on 7/18/20.
+//  Created by Christian Valencia on 7/19/20.
 //  Copyright © 2020 PantherHacks. All rights reserved.
 //
 
 import UIKit
 
-class NewOrderViewController: UIViewController {
+class TabBarViewController: UITabBarController {
     
     var execute = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        execute = Execute.execute
-
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func newOrder(_ sender: Any) {
-        if !execute {
-            performSegue(withIdentifier: "toSelectDelivery", sender: nil)
-        }
     }
     
 
@@ -33,6 +25,10 @@ class NewOrderViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let viewController = segue.destination as? NewOrderViewController {
+            viewController.execute = self.execute
+        }
+        
         if let viewController = segue.destination as? OrdersTableViewController {
             viewController.execute = self.execute
         }

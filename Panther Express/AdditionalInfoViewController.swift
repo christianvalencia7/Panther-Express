@@ -56,7 +56,7 @@ class AdditionalInfoViewController: UIViewController {
             let jsonData = try JSONEncoder().encode(order)
             let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
             let firestoreOrder = [order.pickUpName : jsonObject] as [String : Any]
-            firestoreDatabase.collection(order.requestedBy).document(order.id.uuidString).setData(firestoreOrder)
+            firestoreDatabase.collection("Orders").document(order.id.uuidString).setData(firestoreOrder)
 
         }
         catch {
